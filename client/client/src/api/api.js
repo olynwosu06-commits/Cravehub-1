@@ -6,7 +6,7 @@ import { getSessionId } from './session';
 const TOKEN_KEY = 'cravehub-token';
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5002',
+  baseURL: 'https://cravehub-1.onrender.com',
 });
 
 api.interceptors.request.use((config) => {
