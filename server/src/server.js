@@ -22,8 +22,22 @@ const PORT = process.env.PORT || 5002;
 
 // Middleware
 app.use(express.json());
+const allowedOrigins = [
+  'https://cravehub-1-client.vercel.app',
+  'http://localhost:5173', // your local frontend port, adjust if different
+];
+
 app.use(cors({
-  origin: 'https://cravehub-1-client.vercel.app/',
+  origin: (origin, callback) => {
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      /^https:\/\/cravehub-1-client-.*\.vercel\.app$/.test(origin)
+    ) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
 }));
 

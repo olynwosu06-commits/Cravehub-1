@@ -5,10 +5,16 @@ import { getSessionId } from './session';
 
 const TOKEN_KEY = 'cravehub-token';
 
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://cravehub-1.onrender.com'
+    : 'http://localhost:5002';
+
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5002',
-  withCredentials: true, // only keep this if your login uses cookies
+  baseURL,
+  withCredentials: true, // only if your login uses cookies
 });
+
 
 api.interceptors.request.use((config) => {
   // 1. Always attach the session ID (for anonymous cart/favorites)
