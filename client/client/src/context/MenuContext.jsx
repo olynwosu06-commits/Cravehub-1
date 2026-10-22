@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import api from '../api/api';
 
 const MenuContext = createContext();
 
@@ -13,7 +13,7 @@ export function MenuProvider({ children }) {
     setFetchError(null);
 
     try {
-    const { data } = await axios.get('http://localhost:5002/api/menu');
+    const { data } = await api.get('/api/menu');
       setItems(data);
     } catch (err) {
       setFetchError(err.message || 'Failed to load menu');
