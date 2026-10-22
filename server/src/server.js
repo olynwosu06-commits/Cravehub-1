@@ -23,13 +23,8 @@ const PORT = process.env.PORT || 5002;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: [
-    'http://localhost:3000', 
-    'https://cravehub-1-client.vercel.app' // 👈 Put your exact Vercel URL here
-  ],
+  origin: 'https://cravehub-1-client.vercel.app/',
   credentials: true,
-  allowedHeaders: ['Content-Type', 'x-session-id', 'Authorization'],
-  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
 }));
 
 // MongoDB URI

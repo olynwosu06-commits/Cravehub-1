@@ -32,9 +32,14 @@ export function FaveProvider({ children }) {
     }
   }, [showToast]);
 
-  useEffect(() => {
+useEffect(() => {
+  if (user) {
     loadFaves();
-  }, [loadFaves, user]);
+  } else {
+    setFaveItems([]);
+    setIsLoading(false);
+  }
+}, [loadFaves, user]);
 
   // Helper: is a given item favorited?
   const isFave = (menuItemId) => {

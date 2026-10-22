@@ -39,9 +39,14 @@ export function CartProvider({ children }) {
     }
   }, [showToast]);
 
-  useEffect(() => {
+useEffect(() => {
+  if (user) {
     loadCart();
-  }, [loadCart, user]);
+  } else {
+    setCartItems([]);
+    setIsLoading(false);
+  }
+}, [loadCart, user]);
 
   // Add to cart (or bump quantity if it exists)
   const addToCart = async (item) => {
