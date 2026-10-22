@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer-div{
+    background-color: var(--surface);
+    height: 40vh;
+    padding: 40px 90px 20px 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.main-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.first{
+      gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.first h1{
+  font-weight: bold;
+  color: var(--on-error-container);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 23px;
+  text-transform: uppercase;
+}
+.first h1 span{
+  color: #fabd00;
+}
+.first p{
+    font-size: 20px;
+}
+
+.second, .third, .fourth{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.second h3, .third h3, .fourth h3{
+    font-size: 17px;
+    font-weight: bold;
+    /* color: gray; */
+}
+
+.second ul, .third ul, .fourth ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.second ul li, .third ul li, .fourth ul li{
+    list-style: none;
+    font-size: 14px;
+}
+.sub-main-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sub{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.sub div:last-child{
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width:768px){
+    .first p{
+        font-size: 14px;
+    }
+    .second h3, .third h3, .fourth h3{
+        font-size: 14px;
+    }
+    .second ul li, .third ul li, .fourth ul li{
+        font-size: 12px;
+    }
+    .footer-div{
+        padding: 40px 20px 0 20px;
+        height: 90vh;
+        gap: 70px;
+    }
+
+    .main-section{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .sub{
+        flex-direction: column;
+        align-items: center;
+    }
+    .sub div:first-child{
+        font-size: 9.5px;
+    }
+    .sub div:last-child{
+        font-size: 11px;
+    }
+}

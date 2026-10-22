@@ -1,0 +1,95 @@
+.notfound-page {
+  min-height: calc(100vh - 70px); /* Full height minus navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--surface, #fcf9f8);
+  text-align: center;
+}
+
+.notfound-content {
+  max-width: 480px;
+}
+
+.notfound-emoji {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.notfound-content h1 {
+  font-size: 100px;
+  font-weight: 900;
+  color: #b7122a;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.notfound-content h2 {
+  font-size: 24px;
+  color: #1b1b1b;
+  margin: 10px 0 16px;
+}
+
+.notfound-content p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.notfound-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.notfound-btn.primary {
+  background: #b7122a;
+  color: #fff;
+}
+
+.notfound-btn.primary:hover {
+  background: #92001c;
+}
+
+.notfound-btn.secondary {
+  background: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.notfound-btn.secondary:hover {
+  background: #f6f3f2;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .notfound-actions {
+    flex-direction: column;
+  }
+  .notfound-content h1 {
+    font-size: 80px;
+  }
+}

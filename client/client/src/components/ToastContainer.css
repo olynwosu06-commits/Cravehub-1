@@ -1,0 +1,91 @@
+.toast-container {
+  position: fixed;
+  top: 90px;              /* below your navbar (70px) + a bit */
+  right: 20px;
+  z-index: 3000;          /* above drawers and modal */
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  pointer-events: none;   /* clicks pass through the container... */
+}
+
+.toast {
+  pointer-events: auto;   /* ...but toasts themselves are clickable */
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 240px;
+  max-width: 340px;
+
+  padding: 12px 16px;
+
+  background: #fff;
+  color: var(--on-surface, #1b1b1b);
+
+  border-radius: 10px;
+  border-left: 4px solid #ccc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  animation: toastSlideIn 0.25s ease;
+}
+
+.toast i {
+  font-size: 20px;
+}
+
+/* TYPES */
+.toast-success {
+  border-left-color: #2e7d32;
+}
+.toast-success i {
+  color: #2e7d32;
+}
+
+.toast-error {
+  border-left-color: #ba1a1a;
+}
+.toast-error i {
+  color: #ba1a1a;
+}
+
+.toast-info {
+  border-left-color: #1976d2;
+}
+.toast-info i {
+  color: #1976d2;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .toast-container {
+    top: 70px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .toast {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
